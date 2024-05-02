@@ -23,7 +23,7 @@ namespace GestoreEvento
             }
             set
             {
-                //se il titolo non è una stringa vuota o spazi bianchi
+                //controllo titolo
                 if (!string.IsNullOrWhiteSpace(value))
                 {
                     _titolo = value;
@@ -42,7 +42,7 @@ namespace GestoreEvento
             }
             set
             {
-                //se la date è minore di oggi
+                //if la date è minore di oggi
                 if (value >= DateTime.Now)
                 {
                     _data = value;
@@ -62,7 +62,7 @@ namespace GestoreEvento
             private set
             {
 
-                //se la capienza è maggiore di 0
+                //if la capienza è maggiore di 0
                 if (value > 0)
                 {
                     _capienzaEvento = value;
@@ -87,13 +87,13 @@ namespace GestoreEvento
 
         public int PrenotaPosti(int postiDaPrenotare)
         {
-            // se l'evento è già passato
+            // if l'evento è già passato
             if (Data < DateTime.Now)
             {
                 throw new Exception("L'evento è già passato.");
             }
 
-            //se il numero di posti è maggiore della capienza o i posti da prenotare sono maggiori della capienza
+            //if n di posti è > della capienza massima o i posti da prenotare sono > della capienza
             else if (NumeroPostiPrenotati > CapienzaEvento || CapienzaEvento < postiDaPrenotare)
             {
                 throw new Exception("L'evento non ha più posti a disposizione.");

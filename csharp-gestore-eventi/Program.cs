@@ -10,17 +10,17 @@
                 Console.WriteLine("Inserisci i dettagli del nuovo evento:");
 
 
-                //titolo
+                //nome evento
                 Console.Write("Inserisci il nome dell'evento: ");
                 string titolo = Console.ReadLine();
 
 
-                //data
+                //data evento
                 Console.Write("Inserisci la data dell'evento (gg/mm/yyyy): ");
                 DateTime data = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
 
 
-                //capienza
+                //capienzaevento
                 Console.Write("Inserisci il numero di posti totali: ");
                 int capienzaEvento = int.Parse(Console.ReadLine());
 
@@ -35,11 +35,11 @@
                 Console.WriteLine();
                 if (risposta == "si")
                 {
-                    //posti prenotati
+                    //posti da prenotare
                     Console.WriteLine("Quanti posti desideri prenotare? ");
                     int numeroPostiCheSiVoglionoPrenotare = int.Parse(Console.ReadLine());
 
-                    // effettua le prenotazioni utilizzando il metodo PrenotaPosti
+                    
                     int postiPrenotati = nuovoEvento.PrenotaPosti(numeroPostiCheSiVoglionoPrenotare);
 
                     Console.WriteLine();
@@ -56,11 +56,11 @@
                     if (risposta == "si")
                     {
                         Console.WriteLine($"Ok, va bene!");
-                        //posti da disdire
+                        //quali posti disdire
                         Console.WriteLine($"Indica il numero dei posti che vuoi disdire: ");
                         int numeroPostiCheSiVoglionoDisdire = int.Parse(Console.ReadLine());
 
-                        // effettua le disdette utilizzando il metodo DisdisciPosti
+                        // metodo disdette utilizzato
                         int postiCancellati = nuovoEvento.DisdisciPosti(numeroPostiCheSiVoglionoDisdire);
 
                         Console.WriteLine();
